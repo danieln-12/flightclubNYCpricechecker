@@ -51,10 +51,8 @@ def main():
             if price == None:
                 print(f'Size {x} US => N/A')
             else:
-                vat = price - (price * 9.5 / 100)
-                vat2 = vat - (500)
-                vat3 = vat2 - (vat * 2.9 / 100)
-                print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {vat3/100:.2f}') 
+                payout = ((0.905 * price) - 500 ) *0.971
+                print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {payout/100:.2f}') 
 
 
     if division == "Women":
@@ -63,10 +61,8 @@ def main():
             if price == None:
                 print(f'Size {x} US => N/A')
             else:
-                vat = price - (price * 9.5 / 100)
-                vat2 = vat - (500)
-                vat3 = vat2 - (vat * 2.9 / 100)
-                print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {vat3/100:.2f}')    
+                payout = ((0.905 * price) - 500 ) *0.971
+                print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {payout/100:.2f}')    
 
     if division == "Boy":
         for x in gs_sizes:
@@ -74,10 +70,8 @@ def main():
             if price == None:
                 print(f'Size {x} US => N/A')
             else:
-                vat = price - (price * 9.5 / 100)
-                vat2 = vat - (500)
-                vat3 = vat2 - (vat * 2.9 / 100)
-                print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {vat3/100:.2f}')    
+                payout = ((0.905 * price) - 500 ) *0.971
+                print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {payout/100:.2f}')    
 
     
 main()
