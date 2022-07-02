@@ -35,7 +35,11 @@ def main():
     
     item = prod_data["name"]
     image = prod_data["imageUrl"]
+    id = prod_data["id"]
+    sku = prod_data["style"]
     print(f'Product => {item}')
+    print(f'SKU => {sku}')
+    print(f'ID => {id}')
     sizes = ['4','4.5','5','5.5','6','6.5','7','7.5','8','8.5','9','9.5','10','10.5','11','11.5','12','12.5','13','14']
     gs_sizes = ['4Y','4.5Y','5Y','5.5Y','6Y','6.5Y','7Y']
     wmns_sizes = ['w5','w5.5','w6','w6.5','w7','w7.5','w8','w8.5','w9','w9.5','w10','w10.5','w11','w11.5','w12']
@@ -47,7 +51,10 @@ def main():
             if price == None:
                 print(f'Size {x} US => N/A')
             else:
-                print(f'Size {x} US => {price/100:.2f}')
+                vat = price - (price * 9.5 / 100)
+                vat2 = vat - (500)
+                vat3 = vat2 - (vat * 2.9 / 100)
+                print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {vat3/100:.2f}') 
 
 
     if division == "Women":
@@ -56,8 +63,10 @@ def main():
             if price == None:
                 print(f'Size {x} US => N/A')
             else:
-                print(f'Size {x} US => {price/100:.2f}')
-
+                vat = price - (price * 9.5 / 100)
+                vat2 = vat - (500)
+                vat3 = vat2 - (vat * 2.9 / 100)
+                print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {vat3/100:.2f}')    
 
     if division == "Boy":
         for x in gs_sizes:
@@ -65,7 +74,10 @@ def main():
             if price == None:
                 print(f'Size {x} US => N/A')
             else:
-                print(f'Size {x} US => {price/100:.2f}')    
+                vat = price - (price * 9.5 / 100)
+                vat2 = vat - (500)
+                vat3 = vat2 - (vat * 2.9 / 100)
+                print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {vat3/100:.2f}')    
 
     
 main()
