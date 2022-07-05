@@ -32,7 +32,8 @@ def main():
     if response['totalCount'] == 0:
         print(f'Error = > No product found')
         main()
-        
+    else:
+        print(f'Searching..')
     id = response['results'][0]['id']
     prod_data = requests.get(f'https://sell.flightclub.com/api/public/products/{id}', headers=headers)
     prod_data = prod_data.json()
@@ -77,5 +78,4 @@ def main():
                 payout = ((0.905 * price) - 500 ) *0.971
                 print(f'Size => {x} US | Price => {price/100:.2f} | Payout => {payout/100:.2f}')    
 
-    
 main()
