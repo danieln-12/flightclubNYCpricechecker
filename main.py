@@ -29,6 +29,10 @@ def main():
 }
     response = requests.get('https://sell.flightclub.com/api/public/search', params=params, headers=headers)
     response = response.json()
+    if response['totalCount'] == 0:
+        print(f'Error = > No product found')
+        main()
+        
     id = response['results'][0]['id']
     prod_data = requests.get(f'https://sell.flightclub.com/api/public/products/{id}', headers=headers)
     prod_data = prod_data.json()
