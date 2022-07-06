@@ -33,7 +33,7 @@ def main():
         print(f'Error = > No product found')
         main()
     else:
-        print(f'Searching..')
+        print(f'Searching...')
     id = response['results'][0]['id']
     prod_data = requests.get(f'https://sell.flightclub.com/api/public/products/{id}', headers=headers)
     prod_data = prod_data.json()
